@@ -26,15 +26,15 @@ new aliasZigbee();
 * @param {string} cmd
 */
 async function loop(cmd) {
-
     if (cmd === 'start') {
-        await createConfig();
+        createConfig();
+    } else {
+        this.ids = await Array.prototype.slice.apply($(`state[id='${zigbee}*']`));
+        this.objName = await getIDs();
+        this.objNew = await getName();
+        this.arrayTrigger = await createDp();
+        await createTrigger(cmd);
     };
-    this.ids = Array.prototype.slice.apply($(`state[id='${zigbee}*']`));
-    this.objName = await getIDs();
-    this.objNew = await getName();
-    this.arrayTrigger = await createDp();
-    await createTrigger(cmd);
 };
 
 async function createConfig() {
@@ -56,7 +56,7 @@ async function createConfig() {
                 "write": true,
                 "role": "state"
             },
-            ini: ['state', 'temperature', 'occupancy'],
+            ini: ['state', 'temperature', 'occupancy']
         }
     };
 
@@ -71,21 +71,19 @@ async function createConfig() {
         if (!getObject(path)) {
             createStateAsync(path, JSON.parse(com), async () => {
                 if (i == 'attributes') {
-                    setStateAsync(path, this.config[i].ini, true)
+                    setStateAsync(path, this.config[i].ini.toString(), true)
                 };
             });
-        } else {
-            if (i == 'attributes') {
-                const result = await getStateAsync(path);
-                this.attributes = result.val.split(',');
-            };
+        }
+        if (i == 'attributes') {
+            const result = await getStateAsync(path);
+            this.attributes = result !== null ? result.val.split(',') || [] : this.config.attributes.ini;
         };
 
         // // trigger auf config
         on({ id: path, change: "any", ack: false }, async obj => {
             if (obj.id === `${target}.0_Config.attributes`) {
                 this.attributes = obj.state.val.split(',');
-                console.warn(JSON.stringify(this.attributes))
                 const value = obj.state.val;
                 setState(path, value, true);
             };
@@ -93,6 +91,11 @@ async function createConfig() {
         });
 
     };
+
+    setTimeout(() => {
+        loop(null);
+    }, 500)
+
 };
 
 // eindeutige device namen aus der id holen
@@ -223,13 +226,3 @@ async function createTrigger(cmd) {
         });
     };
 };
-
-
-
-
-
-
-
-
-
-
