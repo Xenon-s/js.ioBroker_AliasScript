@@ -1,6 +1,6 @@
 
 
-# Alias Script fuer ioBroker V0.1
+# Alias Script für ioBroker V0.1
 Dieses Script ermöglicht es, alias States zu erzeugen. Die Unterschied zu schon vorhandenen Boardmitteln, bzw. Adaptern ist, dass man nahezu nichts von Hand eingeben muss. Es reicht der Name des Datenpunktes.
 Das Script erstellt dann anhand des device-Namens eine neue Ordnerstruktur mit ausschließlich den Datenpunkten, die vom User vorgegeben werden. 
 
@@ -18,7 +18,7 @@ Es gibt im Script selber nur zwei Parameter, die der User ändern kann.
 
 # Anleitung
 ## Script erstellen
-Ein neues JS Script in iobroker erstellen und das [Alias-Script V0.1 ](https://raw.githubusercontent.com/Xenon-s/js.ioBroker_AliasScript/main/alias_script_V_0_1.js) aus "alias_script_V_0_1.js" kopieren und einfügen. <br>
+Ein neues JS Script in iobroker erstellen und das [Alias-Script V0.1 ](https://raw.githubusercontent.com/Xenon-s/js.ioBroker_AliasScript/main/alias_script_V_0_1.js)  kopieren und einfügen. <br>
 
 ![erstellung_1.png](/pictures/erstellung_1.png) <br> 
 ![erstellung_2.png](/pictures/erstellung_2.png) <br>
@@ -32,7 +32,7 @@ Folgendes kann optional geändert werden:
 ![User_Input.png](/pictures/User_Input.png) <br>
 
 ### Datenpunkte
-Es wird der Datenpunkt 0_Config zur Verfügung gestellt. Im Datenpunkt "attributes" werden dann die gewüschten States eingetragen. Standardmäßig stehen hier bereits "state, temperature, occupancy" drin. Jeder weitere Eintrag muss mit einem Komma getrennt werden. 
+Es wird der Datenpunkt 0_Config zur Verfügung gestellt. Im Datenpunkt "attributes" werden dann die gewüschten States eingetragen. Standardmäßig stehen hier bereits "state, temperature, occupancy" drin. Jeder weitere Eintrag muss mit einem Komma getrennt werden.
 
 ![attributes.png](/pictures/attributes.png) <br>
 
