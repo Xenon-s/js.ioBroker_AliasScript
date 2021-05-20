@@ -1,0 +1,1 @@
+js.ioBroker_AliasScript
