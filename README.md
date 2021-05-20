@@ -44,13 +44,15 @@ Struktur durch das Skript:
 ![alias.png](/pictures/alias.png) <br>
 
 
-
 **Falls euch meine Arbeit gefällt :** <br>
 
 [![Paypal Donation](https://img.shields.io/badge/paypal-donate%20%7C%20spenden-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3EYML5A4EMJCW&source=url)
 
 
 ## Changelog
+### 0.2 (20-05.2021)
+* (xenon-s) Update Version 0.2
+- Bugfix: Namen wurden nicht immer gefunden
 
 ### 0.1 (20-05.2021)
 * (xenon-s) initial commit
