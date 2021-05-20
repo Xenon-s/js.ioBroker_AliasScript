@@ -18,7 +18,7 @@ Es gibt im Script selber nur zwei Parameter, die der User ändern kann.
 
 # Anleitung
 ## Script erstellen
-Ein neues JS Script in iobroker erstellen und das [Alias-Script V0.1 ](https://raw.githubusercontent.com/Xenon-s/js.ioBroker_AliasScript/main/alias_script_V_0_1.js) aus "script.js" kopieren und einfügen. <br>
+Ein neues JS Script in iobroker erstellen und das [Alias-Script V0.1 ](https://raw.githubusercontent.com/Xenon-s/js.ioBroker_AliasScript/main/alias_script_V_0_1.js) aus "alias_script_V_0_1.js" kopieren und einfügen. <br>
 
 ![erstellung_1.png](/pictures/erstellung_1.png) <br> 
 ![erstellung_2.png](/pictures/erstellung_2.png) <br>
